@@ -1,4 +1,4 @@
-import { LogDatasource } from "../../domain/dataSources/log.tatasource";
+import { LogDatasource } from "../../domain/dataSources/log.datasource";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entity";
 import fs from 'fs';
 
