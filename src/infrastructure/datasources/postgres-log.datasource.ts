@@ -13,7 +13,7 @@ const levelFormat = {
 export class PostgresLogDataSource implements LogDatasource{
     async saveLog(log: LogEntity): Promise<void> {
 
-        const level = levelFormat[log.level];
+        const level = levelFormat[log.level];   
         
         const newLog = await prismaClient.logModel.create({
             
