@@ -32,11 +32,8 @@ export class FileSystemDatasource implements LogDatasource {
     }
 
     async saveLog(newLog: LogEntity): Promise<void> {
-
         const logAsJSON = `${JSON.stringify(newLog)}\n`;
-
         fs.appendFileSync( this.allLogsPath, logAsJSON );
-
         if( newLog.level === LogSeverityLevel.low) return;
 
         if( newLog.level === LogSeverityLevel.medium){
@@ -47,8 +44,10 @@ export class FileSystemDatasource implements LogDatasource {
     }
 
     private getLogsFromFile = (path: string): LogEntity[] => {
+
         const content = fs.readFileSync( path , 'utf-8' );
 
+        if(content === '') return []; 
         const logs = content.split( '\n' ).map( 
             
             log => LogEntity.fromJSON( log )
