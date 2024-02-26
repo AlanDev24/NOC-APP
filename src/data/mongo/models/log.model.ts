@@ -9,7 +9,7 @@ const logSchema = new mongoose.Schema({
   },
   message: { type: String, require: true },
   origin: String,
-  CreatedAt: {
+  createdAt: {
     type: Date,
     default: new Date
   },

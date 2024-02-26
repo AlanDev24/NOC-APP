@@ -15,7 +15,8 @@ El objetivo es crear una serie de tareas usando Arquitectura limpia con TypeScri
         ''' 
         docker compose -d
         '''
-5. Ejecutar ''' npm run dev'''
+5. ejecutar el comando 'npx prisma dev'
+6. Ejecutar ''' npm run dev'''
 
 ##Obtener gmail key
 [google AppPasswords] (https://myaccount.google.com/u/0/apppasswords)
